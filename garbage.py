@@ -1,27 +1,24 @@
-import math as m 
-def convert(n , l):
-    
-    length = 0 
-    d = '0'
-    o = '1'
 
-    for length in range(0 , 9):
-        if(n%2 == 0):
-            l.append(d)
-
-        else:
-            l.append(o)
-
-        if(n==0):
-            break 
+class findmax:
+    def __init__(self, numList):
+        self.numList = numList
+        self.max = 0 
         
-        n = m.floor(n/2)
+        
+    def maxinum(self):
+        
+        for number in self.numList:
+            if(number > self.max):
+                self.max = number 
+                
+    def printnum(self):
+        print("the maximum number from list is " , self.max)
+        
 
-    p = ''.join(l) 
-    return p[  : :-1]
-
-
-l = [] 
-n = int(input('enter value of n'))
-
-print(convert(n, l ))
+print("enter the number below ") 
+list = [1,2,4,5 , 67] 
+max_num = findmax(list)
+max_num.maxinum() 
+max_num.printnum()
+             
+    
